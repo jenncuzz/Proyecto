@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} %acentos
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\author{Jennifer Cruz Muñoz \and Jose Daniel Ku Ek \and Israel Navarrete Alvarado}
+\title{Documentación Kinect}
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Descripción del Dispositivo}
+Kinect empezó como una propuesta de Microsoft en Junio del 2009, al principio fue conocido con el nombre "Project Natal", fue lanzado en noviembre del año siguiente teniendo el nombre con el cual lo conocemos actualmente. El dispositivo provee una NUI (Natural User Interface) que hace posible la interacción intuitiva sin ningún dispositivo intermedio, como había sido antes el control remoto.
+
+\subsection{Capacidades técnicas.}
+Sensor.
+\begin{itemize} %viñetas
+\item Lentes sensibles al color y la profundidad.
+\item Micrófono de voz.
+\item Motor para ajustar la inclinación del sensor.
+\item Compatible con Windows y consolas Xbox existentes.
+\end{itemize}
+Campo de visión.
+\begin{itemize} 
+\item Campo de visión horizontal: 57 grados.
+\item Campo de visión vertical: 43 grados.
+\item Rango de inclinación física: +/- 27 grados.
+\item Rango de sensor de profundidad:  1.2 a 3.5 metros.
+\end{itemize}
+Flujo de datos. 
+\begin{itemize} 
+\item 320x240  profundidad de 16 bits, 30 cuadros por segundo.
+\item 640x480 color de 32 bits, 30 cuadros por segundo.
+\item 16 bits de audio, 16 KHz.
+\end{itemize}
+Sistema de rastreo del esqueleto.
+\begin{itemize} 
+\item Rastrea hasta 6 personas, con solo 2 jugadores activos.
+\item Rastrea hasta 20 articulaciones por jugador activo.
+\item Posee la habilidad de reconocer jugadores activos con sus avatares de LIVE.
+\end{itemize}
+Sistema de audio.
+\begin{itemize} 
+\item Party chat y chat de voz.
+\item Sistema de cancelación de audio que mejora la recepción de voz.
+\item Reconocimiento de voz.
+\end{itemize}
+
+\section{Descripción de las API's.}
+\subsection{OpenNi}
+\subsection{Open Kinect}
+\subsection{Free Kinect}
+
+\subsection{Kinect SDK}
+Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C-Sharp o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial están incluidos ejemplos de códigos en los tres lenguajes mencionados.
+
+\subsubsection{Tabla comparativa de versiones.}
+\begin{tabular}{||c||c||c||c||c||}
+\hline Característica                           & Beta 1 & Beta 2 & Versión 1 & Versión 1.5 \\ 
+\hline Robust Skeletal Tracking                 & •      & •      & •         & •           \\ 
+\hline API de Reconocimiento de voz             & •      & •      & •         & •           \\ 
+\hline Cancelación de eco                       & •      & •      & •         & •           \\ 
+\hline Camara XYZ (depth)                       & •      & •      & •         & •           \\ 
+\hline Windows 7                                & •      & •      & •         & •           \\ 
+\hline Windows 8                                &        & •      & •         & •           \\ 
+\hline Cámara a colores                         &        & •      & •         & •           \\ 
+\hline Acceso a datos en bruto del sensor depth &        & •      & •         & •           \\ 
+\hline Acceso a datos en bruto de la cámara     &        & •      & •         & •           \\ 
+\hline Acceso a datos en bruto del micrófono    &        & •      & •         & •           \\ 
+\hline Multithreading al usar Skeletal Tracking &        & •      & •         & •           \\ 
+\hline Detección y gestión del estado de Kinect &        & •      & •         & •           \\ 
+\hline Construcción de apps de 64 bits          &        & •      & •         & •           \\ 
+\hline Supresión de ruido de fondo              &        & •      & •         & •           \\ 
+\hline Near Mode                                &        &        & •         & •           \\
+\hline Soporte de 4 sensores kinect al mismo PC &        &        & •         & •           \\ 
+\hline Control de detección de usuario en S.T.  &        &        & •         & •           \\ 
+\hline Microsoft Speech V.11 incluido           &        &        & •         & •           \\  
+\hline Acustica mejorada con far-talk           &        &        & •         & •           \\  
+\hline Soporte para idioma Español              &        &        &           & •           \\ 
+\hline Kinect Studio                            &        &        &           & •           \\ 
+\hline Human Interface Guidelines (HIG)         &        &        &           & •           \\ 
+\hline Face Tracking SDK                        &        &        &           & •           \\ 
+\hline Seat Skeletal Tracking                   &        &        &           & •           \\ 
+\hline Skeletal Tracking Near Mode              &        &        &           & •           \\ 
+\hline 
+\end{tabular} 
+
+\subsubsection{XNA.}
+XNA es un conjunto de tecnologías para video juegos de Microsoft, entre las cuales estan incluidas las siguientes: 
+\begin{itemize}
+\item DiectX. Se trata de una librería de C++ para programar gráficos.
+\item XNA Game Studio. Son complementos de Visual Studio para la canalización del contenido y el despliegue de funciones usadas con el framework. Esta es la herramienta usada al hacer un juego para Xbox y enviar los datos a este.
+\item Framework de XNA. Es el conjunto de bibliotecas .NET construidas.
+\end{itemize}
+
+\subsubsection{Microsoft Speech Platform Runtime.}
+Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramientas de desarrollo de Microsoft de gramática para ayudar a validar, depurar, probar y optimizar las gramáticas de las aplicaciones de voz. Entre sus herramientas se encuentran las siguientes:
+\begin{itemize}
+\item \textbf{CheckPhrase.exe.} Esta nueva herramienta tiene una frase y una gramática como entradas y salidas. Check Phrase emite frases personalizadas asociadas con la frase que se encuentra.
+\item \textbf{Confusability.exe.} This new tool identifies phrases in a grammar that are phonetically similar. The tool can help detect phrases that may ultimately cause users to have a poor experience, such that one phrase in the grammar is falsely recognized for another phrase that is also in the grammar. The Confusability tool accepts multiple grammar files as input and performs its analysis on the entire set of specified input files.
+\item \textbf{GrammarValidator.exe} Valida la sintaxis del elemento gramatical. Emite una serie de advertencias al validar una gramática, que incluye la detección de la repetición y las reglas inalcanzables.
+\item \textbf{PhraseGenerator.exe}Genera un subconjunto de frases sobre la base de los pesos en la gramática, y si lo desea, puede optar por no ampliar las referencias específicas de la regla.
+\item \textbf{Simulator.exe} Usted puede elegir si desea o no volver a utilizar el estado del motor en la estructura de la EMMA (Extensible MultiModal Annotation) de entrada, en lugar de una opción en la línea de comandos. Es decir, el estado motor de reconocimiento es ahora automáticamente reutilizado sólo cuando las expresiones están contenidas dentro de un emma en un bloque de secuencia. Además, el /ReuseEngineState de línea de comandos se ha eliminado.
+\item \textbf{SimulatorResultsAnalyzer.exe} Proporciona información adicional para el ajuste de sus gramáticas, incluyendo detección de frases "out of grammar" y nuevos tipos de categorías de errores para darle un mejor análisis y métricas para el reconocimiento simulado. Añade nuevos elementos XML (AudioType, RecoResultSemantics y TranscriptSemantics) a la salida para hacer más fácil analizar los resultados sin necesidad de referirse de nuevo al archivo de salida del simulador.
+\end{itemize} 
+
+\subsubsection{Kinect Speech Language Pack.}
+Los paquetes de lenguaje de Kinect para Windows son complementos para el Kinect en tiempo de ejecución que usan el reconocimiento de voz para habilitar la forma en que cierto idioma se habla en diferentes lugares.
+
+\end{document}
