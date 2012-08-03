@@ -50,8 +50,40 @@ Sistema de audio.
 
 \section{Descripción de las API's.}
 \subsection{OpenNi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Open Kinect}
-\subsection{Free Kinect}
+También conocido como free kinect es un librería bajo la licencia libre cuya función es acceder a Microsoft Kinect USB camera, se comenzó a trabajar en esta en noviembre del 2011; esta librería, es desarrollada por OpenKinect que es una comunidad de programadores que según su pagina \footnote{•http://www.openkinect.org} consta con mas de 2000 miembros. Esta libreria actualmente tiene soporte para:
+\begin{itemize}
+\item RGB y sensor de profundidad.
+\item Motores.
+\item Acelerometro.
+\item Led.
+\item Se esta trabajando de en el acceso a audio.
+\end{itemize}
+\subsubsection{Libfreenect.}
+Esta librería de bajo nivel incluye todo el código necesario para activar, inicializar y establecer la comunicación de datos con el hardware kinect, incluye una API cross-platform que funciona con Windows, Linux  y OS X. El API tiene adaptaciones y exenciones para estos lenguajes:
+\begin{itemize}
+\item C.
+\item C++.
+\item .NET (C\#/VB.NET).
+\item Java ( JNA and JNI).
+\item Python.
+\item C Synchronous Interface.
+\end{itemize} 
+\subsubsection{OpenKinect Analysis Library.}
+Esta bibliotecas se comunica con el API de OpenKinect y analiza la información en bruto en abstracciones más útiles.
+\begin{itemize}
+\item Hand tracking
+\item Skeleton tracking
+\item Depth processing
+\item 3D audio isolation coning?
+\item Audio cancellation (perhaps a driver feature?)
+\item Point cloud generation
+\item Inertial movement tracking with the built in accelerometer or an attached WiiMote
+\item 3d reconstruction
+\item GPU acceleration for any of the above 
+\end{itemize}
+Sin embargo esta biblioteca no esta disponible aun. Ademas de estas bi-bliotecas el proyecto ofrece \textbf{OpenKinect Apps} que es  código ejemplo, y aplicaciones 
 
 \subsection{Kinect SDK}
 Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C-Sharp o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial están incluidos ejemplos de códigos en los tres lenguajes mencionados.
