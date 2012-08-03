@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[x11names,table]{xcolor}
+
 \author{Jennifer Cruz Muñoz \and Jose Daniel Ku Ek \and Israel Navarrete Alvarado}
 \title{Documentación Kinect}
 \begin{document}
@@ -47,12 +49,19 @@ Sistema de audio.
 \item Sistema de cancelación de audio que mejora la recepción de voz.
 \item Reconocimiento de voz.
 \end{itemize}
-
 \section{Descripción de las API's.}
 \subsection{OpenNi}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Es un framework multi-language, cross-platform que define un API para desarrollo de aplicaciones,esta compuesta por un grupo de interfaces que permiten el acceso a los sensores de audio y visión, OpenNi esta bajo la licencia libre, el responsable de OpenNi es PrimeSense una empresa Israelí que desarrollo la tecnología en el kinect.
+\subsubsection{Middleware (NITE).}
+Para el procesamiento de la datos del utiliza Middleware llamado NITE este no esta bajo licencia libre y provee las siguientes características:
+\begin{itemize}
+\item Análisis de cuerpo completo.
+\item Análisis de mano
+\item Detección de gestos 
+\item Análisis de escena 
+\end{itemize} 
 \subsection{Open Kinect}
-También conocido como free kinect es un librería bajo la licencia libre cuya función es acceder a Microsoft Kinect USB camera, se comenzó a trabajar en esta en noviembre del 2011; esta librería, es desarrollada por OpenKinect que es una comunidad de programadores que según su pagina \footnote{•http://www.openkinect.org} consta con mas de 2000 miembros. Esta libreria actualmente tiene soporte para:
+También conocida como free kinect es un librería bajo licencia libre cuya función es acceder a Microsoft Kinect USB camera, se comenzó desarrollarla en noviembre del 2011; esta librería, fue creada por OpenKinect que es una comunidad de programadores que según su pagina \footnote{•http://www.openkinect.org} consta con mas de 2000 miembros. Esta libreria actualmente tiene soporte para:
 \begin{itemize}
 \item RGB y sensor de profundidad.
 \item Motores.
@@ -84,13 +93,16 @@ Esta bibliotecas se comunica con el API de OpenKinect y analiza la información 
 \item GPU acceleration for any of the above 
 \end{itemize}
 Sin embargo esta biblioteca no esta disponible aun. Ademas de estas bi-bliotecas el proyecto ofrece \textbf{OpenKinect Apps} que es  código ejemplo, y aplicaciones 
-
 \subsection{Kinect SDK}
 Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C-Sharp o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial están incluidos ejemplos de códigos en los tres lenguajes mencionados.
 
 \subsubsection{Tabla comparativa de versiones.}
+\rowcolors{1}{}{gray!20}
+
 \begin{tabular}{||c||c||c||c||c||}
-\hline Característica                           & Beta 1 & Beta 2 & Versión 1 & Versión 1.5 \\ 
+\rowcolor{LightBlue2}
+
+\hline  Característica                           & Beta 1 & Beta 2 & Versión 1 & Versión 1.5 \\ 
 \hline Robust Skeletal Tracking                 & •      & •      & •         & •           \\ 
 \hline API de Reconocimiento de voz             & •      & •      & •         & •           \\ 
 \hline Cancelación de eco                       & •      & •      & •         & •           \\ 
