@@ -4,8 +4,6 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage[x11names,table]{xcolor}
-
 \author{Jennifer Cruz Muñoz \and Jose Daniel Ku Ek \and Israel Navarrete Alvarado}
 \title{Documentación Kinect}
 \begin{document}
@@ -14,7 +12,8 @@
 \tableofcontents
 \newpage
 \section{Descripción del Dispositivo}
-Kinect empezó como una propuesta de Microsoft en Junio del 2009, al principio fue conocido con el nombre "Project Natal", fue lanzado en noviembre del año siguiente teniendo el nombre con el cual lo conocemos actualmente. El dispositivo provee una NUI (Natural User Interface) que hace posible la interacción intuitiva sin ningún dispositivo intermedio, como había sido antes el control remoto.
+Kinect empezó como una propuesta de Microsoft en Junio del 2009, al principio fue conocido con el nombre "Project Natal", fue lanzado en noviembre del año siguiente teniendo el nombre con el cual lo conocemos actualmente. El dispositivo provee una NUI (Natural User Interface) que hace posible la interacción intuitiva sin ningún dispositivo intermedio, como había sido antes el control remoto. 
+El dispositivo Kinect hace posible que una computadora cobre sentido sobre el entorno que la rodea, lo logra usando una cámara, un micrófono direccional y un sensor de profundidad. Gracias a este dispositivo se puede mejorar el modo de interacción humano - maquina, permitiendo que aplicaciones reaccionen a un gesto o una seña hecha por el usuario.
 
 \subsection{Capacidades técnicas.}
 Sensor.
@@ -49,9 +48,12 @@ Sistema de audio.
 \item Sistema de cancelación de audio que mejora la recepción de voz.
 \item Reconocimiento de voz.
 \end{itemize}
+
 \section{Descripción de las API's.}
+
 \subsection{OpenNi}
 Es un framework multi-language, cross-platform que define un API para desarrollo de aplicaciones,esta compuesta por un grupo de interfaces que permiten el acceso a los sensores de audio y visión, OpenNi esta bajo la licencia libre, el responsable de OpenNi es PrimeSense una empresa Israelí que desarrollo la tecnología en el kinect.
+
 \subsubsection{Middleware (NITE).}
 Para el procesamiento de la datos del utiliza Middleware llamado NITE este no esta bajo licencia libre y provee las siguientes características:
 \begin{itemize}
@@ -60,6 +62,7 @@ Para el procesamiento de la datos del utiliza Middleware llamado NITE este no es
 \item Detección de gestos 
 \item Análisis de escena 
 \end{itemize} 
+
 \subsection{Open Kinect}
 También conocida como free kinect es un librería bajo licencia libre cuya función es acceder a Microsoft Kinect USB camera, se comenzó desarrollarla en noviembre del 2011; esta librería, fue creada por OpenKinect que es una comunidad de programadores que según su pagina \footnote{•http://www.openkinect.org} consta con mas de 2000 miembros. Esta libreria actualmente tiene soporte para:
 \begin{itemize}
@@ -79,6 +82,7 @@ Esta librería de bajo nivel incluye todo el código necesario para activar, ini
 \item Python.
 \item C Synchronous Interface.
 \end{itemize} 
+
 \subsubsection{OpenKinect Analysis Library.}
 Esta bibliotecas se comunica con el API de OpenKinect y analiza la información en bruto en abstracciones más útiles.
 \begin{itemize}
@@ -93,16 +97,15 @@ Esta bibliotecas se comunica con el API de OpenKinect y analiza la información 
 \item GPU acceleration for any of the above 
 \end{itemize}
 Sin embargo esta biblioteca no esta disponible aun. Ademas de estas bi-bliotecas el proyecto ofrece \textbf{OpenKinect Apps} que es  código ejemplo, y aplicaciones 
+
+\subsection{Free Kinect}
+
 \subsection{Kinect SDK}
 Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C-Sharp o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial están incluidos ejemplos de códigos en los tres lenguajes mencionados.
 
 \subsubsection{Tabla comparativa de versiones.}
-\rowcolors{1}{}{gray!20}
-
 \begin{tabular}{||c||c||c||c||c||}
-\rowcolor{LightBlue2}
-
-\hline  Característica                           & Beta 1 & Beta 2 & Versión 1 & Versión 1.5 \\ 
+\hline Característica                           & Beta 1 & Beta 2 & Versión 1 & Versión 1.5 \\ 
 \hline Robust Skeletal Tracking                 & •      & •      & •         & •           \\ 
 \hline API de Reconocimiento de voz             & •      & •      & •         & •           \\ 
 \hline Cancelación de eco                       & •      & •      & •         & •           \\ 
@@ -143,7 +146,7 @@ XNA es un conjunto de tecnologías para video juegos de Microsoft, entre las cua
 Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramientas de desarrollo de Microsoft de gramática para ayudar a validar, depurar, probar y optimizar las gramáticas de las aplicaciones de voz. Entre sus herramientas se encuentran las siguientes:
 \begin{itemize}
 \item \textbf{CheckPhrase.exe.} Esta nueva herramienta tiene una frase y una gramática como entradas y salidas. Check Phrase emite frases personalizadas asociadas con la frase que se encuentra.
-\item \textbf{Confusability.exe.} This new tool identifies phrases in a grammar that are phonetically similar. The tool can help detect phrases that may ultimately cause users to have a poor experience, such that one phrase in the grammar is falsely recognized for another phrase that is also in the grammar. The Confusability tool accepts multiple grammar files as input and performs its analysis on the entire set of specified input files.
+\item \textbf{Confusability.exe.} Esta nueva herramienta identifica frases en una gramática que son fonéticamente similares. La herramienta puede ayudar a detectar las frases que a la larga pueden causar a los usuarios tener una mala experiencia, de tal manera que una frase en la gramática es falsamente reconocido por otra frase que también está en la gramática. La herramienta Confusability acepta varios archivos de gramática como de entrada y realiza su análisis en el conjunto de archivos de entrada especificados.
 \item \textbf{GrammarValidator.exe} Valida la sintaxis del elemento gramatical. Emite una serie de advertencias al validar una gramática, que incluye la detección de la repetición y las reglas inalcanzables.
 \item \textbf{PhraseGenerator.exe}Genera un subconjunto de frases sobre la base de los pesos en la gramática, y si lo desea, puede optar por no ampliar las referencias específicas de la regla.
 \item \textbf{Simulator.exe} Usted puede elegir si desea o no volver a utilizar el estado del motor en la estructura de la EMMA (Extensible MultiModal Annotation) de entrada, en lugar de una opción en la línea de comandos. Es decir, el estado motor de reconocimiento es ahora automáticamente reutilizado sólo cuando las expresiones están contenidas dentro de un emma en un bloque de secuencia. Además, el /ReuseEngineState de línea de comandos se ha eliminado.
