@@ -98,6 +98,8 @@ Esta bibliotecas se comunica con el API de OpenKinect y analiza la información 
 \end{itemize}
 Sin embargo esta biblioteca no esta disponible aun. Ademas de estas bi-bliotecas el proyecto ofrece \textbf{OpenKinect Apps} que es  código ejemplo, y aplicaciones 
 
+\subsection{Free Kinect}
+
 \subsection{Kinect SDK}
 Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C-Sharp o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial están incluidos ejemplos de códigos en los tres lenguajes mencionados.
 
@@ -153,16 +155,253 @@ Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramie
 
 \subsubsection{Kinect Speech Language Pack.}
 Los paquetes de lenguaje de Kinect para Windows son complementos para el Kinect en tiempo de ejecución que usan el reconocimiento de voz para habilitar la forma en que cierto idioma se habla en diferentes lugares.
-\subsubsection{Comparativa entre APIS.}
+
+\subsubsection{Librería Kinect}
+\begin{itemize}
+\item KinectSensor
+	\begin{itemize}
+	%~	Métodos
+	\item KinectSensors
+	\item Start
+	\item Stop
+	\item ColorStream
+	\item ColorFrameReady
+	\item SkeletonStream
+	\item InstanceIndex
+	\item DeviceConnectionId
+	\item NuiCamera
+	\item MaxElevationAngle
+	\item MinElevationAngle
+	\item ElevationAngle
+	%~	Atributos
+	\item Dispose
+	\item AllFramesReady: boolean	
+	\item UniqueKinectId: boolean	
+	\item MapDepthFrameToColorFrame: boolean
+	\item MapDepthToColorImagePoint: boolean
+	\item MapDepthToSkeletonPoint: boolean
+	\item MapSkeletonPointToDepth: boolean
+	\item MapSkeletonPointToColor: boolean	
+	\end{itemize}
+\item RuntimeOptions
+	\begin{itemize}
+	%%~	Métodos
+	\item UseDepthAndPlayerIndex
+	\item UseSkeletalTracking
+	\item UseColor
+	\item HasFlag
+	\end{itemize}
+\item KinectDeviceCollection	
+	\begin{itemize}
+	%~	Métodos
+	\item NotifyUserKinectsStatusChanged	
+	%~	Atributos
+	\item Dispose: boolean	
+	\end{itemize}
+\item StatusChangedEventArgs
+	\begin{itemize}
+	%~	Métodos
+	\item Sensor
+	%~	Atributos
+	\end{itemize}
+\item DepthImageFrame
+	\begin{itemize}
+	%~	Métodos
+	\item MapToColorPixel
+	\end{itemize}
+\item KinectStatus
+	\begin{itemize}
+	%~	Atributos
+	\item Undefined: boolean
+	\item Initializing: boolean
+	\item DeviceNotGenuine: boolean
+	\item DeviceNotSupported: boolean
+	\item InsufficientBandwidth: boolean
+	\end{itemize}
+\item ColorImageStream
+	\begin{itemize}
+	%~	Métodos
+	\item OpenNextFrame
+	\item Enable
+	%~	Atributos
+	\item Disable: boolean
+	\item StreamType: boolean
+	\item Resolution: boolean
+	\item Type: boolean
+	\item CreateCompatibleImageFrame: boolean	
+	\item FrameHeight: int
+	\item FrameWidth: int
+	\end{itemize}
+\item ImageFrameReadyEventArgs
+	%\begin{itemize}
+	%~	Métodos
+	%~	Atributos
+	%\end{itemize}	
+\item ColorImageFrameReadyEventArgs
+	\begin{itemize}
+	%~	Métodos
+	\item OpenColorImageFrame 	
+	%~	Atributos
+	\end{itemize}		
+\item ColorImageFrame
+	\begin{itemize}
+	%~	Métodos
+	\item CopyPixelDataTo
+	%~	Atributos
+	\item Type: boolean
+	\item Resolution: boolean
+	\item Image: boolean
+	\item ViewArea: boolean
+	\item ImageFrame: boolean
+	\item Type: boolean
+	\item Sourcestream: boolean 
+	\item Dispose: boolean
+	\item BytesPerPixel: int
+	\item Height: int
+	\item Width: int
+	\item PixelData: int
+	\end{itemize}	
+\item DepthImageStream
+	\begin{itemize}
+	%~	Métodos
+	\item OpenNextFrame
+	\item Enable
+	\item StreamType
+	\item Resolution	
+	\item Type
+	\item CreateCompatibleImageFrame
+	%~	Atributos
+	\item IsTooFarRangeEnabled: boolean
+	\item Disable: boolean
+	\item FrameHeight: int
+	\item FrameWidth: int
+	\end{itemize}
+\item DepthImageFrameReadyEventArgs
+	\begin{itemize}
+	%~	Métodos
+	\item OpenDepthImageFrame
+	%~	Atributos
+	\end{itemize}
+\item DepthImageFrame
+	\begin{itemize}
+	%~	Métodos
+	\item MapToColorImage
+	\item MapFromSkeletonPoint
+	\item MapToSkeletonPoint
+	\item PlanarImage
+	\item ImageDigitalZoom
+	\item ImageStreamType
+	\item ImageType
+	\item ImageResolution
+	\item ImageViewArea
+	\item DepthImageToSkeleton
+	\item SkeletontoDepthImageFrame
+	%~	Atributos
+	\item PlayerIndexBitmask: boolean
+	\item PlayerIndexBitmaskWidth: boolean
+	\item DepthImageFormat: boolean
+	\item DepthRange: boolean
+	\item DepthImageFormat: boolean
+	\item DepthRange: boolean
+	\item DepthImagePoint: boolean
+	\item DepthImagePointFloat: boolean
+	\end{itemize}	 
+\item SkeletonStream
+	\begin{itemize}
+	%~	Métodos
+	\item OpenNextFrame
+	%~	Atributos
+	\item Disable: boolean
+	\item Enable: boolean
+	\item ChooseSkeletons: boolean
+	\end{itemize} 
+\item SkeletonFrameReadyEventArgs
+	\begin{itemize}
+	%~	Métodos
+	\item OpenSkeletonFrame
+	%~	Atributos
+	\end{itemize}	
+\item SkeletonFrame
+	\begin{itemize}
+	%~	Métodos
+	\item Timestamp
+	\item CopySkeletonDataTo
+	\item Quality
+	%~	Atributos
+	\item Dispose: boolean
+	\end{itemize}	
+\item Skeleton
+	\begin{itemize}
+	%~	Métodos
+	\item TrackingId
+	\item Parent
+	\item JointCollection
+	\item SkeletonPoint
+	%~	Atributos
+	\item Count: boolean
+	\item JointType: boolean
+	\item Joint: int
+	\item Position: int
+	\end{itemize}	
+\item FrameEdges
+	\begin{itemize}
+	%~	Métodos
+	 \item SkeletonFrameQuality
+	%~	Atributos
+	\item None: boolean
+	\item Left: int
+	\item Top: int
+	\item Right: int
+	\item Botom: int
+	\end{itemize}
+\item KinectAudioSource
+	%~	Métodos
+	\item FindCaptureDevices
+	\item RetrieveTsStats
+	\item QualityMetrics
+	\item DevicePairGuid
+	\item KinectAudioSource
+	\item AutomaticGainControlEnabled
+	\item SoundsSourceAngle
+	\item SoundSourceAngleConfidence
+	\item BeamAngleMode
+	\item ManualBeamAngle
+	\item BeamAngleChanged
+	\item EchoCancellationSpeakerIndex
+	\item AcousticEchoSuppression
+	\item CenterClip
+	\item EchoLength
+	\item FeatureMode
+	\item FrameSize
+	\item GainBounder
+	\item MicArrayPreprocess
+	\item MicropheneIndex
+	\item NoiseFill
+	\item SourceMode
+	\item VoiceActivityDetector
+	\item EchoCancellationMode
+	\item Dispose
+	\item MicArrayMode
+	\item SystemMode
+	\item BeamAngleChangedEventArgs
+	\item SoundSourceAngleChangedEventArgs: boolean
+	\item EchoCancellationMode: boolean
+	\item BeamAngleMode: boolean
+	%%~	Atributos		
+\end{itemize}
+
+\newpage
+\subsection{Comparativa entre APIS.}
 En la siguiente tabla se muestra una comparación entre las APIS.
-\begin{table}[h]
-\centering
-\begin{tabular}{||p{2cm}||p{2.6cm}||p{2cm}||p{2cm}||p{2cm}||p{3cm}||}
-\hline API         & Multiplataforma & Soporte para varios lenguajes & Acceso de alto nivel & Licencia & Comentarios \\ 
-\hline Open NI     & si & si & si & GPL y propietario & tiene acceso a alto nivel pero en modo de Middleware (NITE) que son módulos separados del API\\ 
-\hline Open Kinect & si & si & no & GPL & No tiene soporte skeleton traking, etc \\ 
-\hline Kinect SDK  & no & si & si & propietario & Solo Funciona en windows 7 y superior \\ 
-\hline
-\end{tabular}
-\end{table}
+
+\begin{tabular}{||p{2.5cm}||p{2.5cm}||p{2.5cm}||p{2.5cm}||}
+\hline API & OpenNI & OpenKinect & Kinect SDK \\ 
+\hline Multi plataforma & • & • &  \\ 
+\hline Multi lenguaje & • & • & • \\ 
+\hline Acceso alto nivel & • &  & • \\ 
+\hline Licencia & GPL y propietario & GPL & Propietario \\ 
+\hline Comentarios & Tiene acceso a alto nivel pero en modo Middleware (NITE) & No soporta skeleton tracking. & Solo funciona con Windows 7 o superior. \\ 
+\hline 
+\end{tabular} 
+
 \end{document}
