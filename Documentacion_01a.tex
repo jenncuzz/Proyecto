@@ -4,7 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\author{Jennifer Cruz Muñoz \and Jose Daniel Ku Ek \and Israel Navarrete Alvarado}
+\author{Jennifer Cruz Muñoz \and José Daniel Ku Ek \and Israel Navarrete Alvarado}
 \title{Documentación Kinect}
 \begin{document}
 \maketitle
@@ -12,8 +12,8 @@
 \tableofcontents
 \newpage
 \section{Descripción del Dispositivo}
-Kinect empezó como una propuesta de Microsoft en Junio del 2009, al principio fue conocido con el nombre "Project Natal", fue lanzado en noviembre del año siguiente teniendo el nombre con el cual lo conocemos actualmente. El dispositivo provee una NUI (Natural User Interface) que hace posible la interacción intuitiva sin ningún dispositivo intermedio, como había sido antes el control remoto. 
-El dispositivo Kinect hace posible que una computadora cobre sentido sobre el entorno que la rodea, lo logra usando una cámara, un micrófono direccional y un sensor de profundidad. Gracias a este dispositivo se puede mejorar el modo de interacción humano - maquina, permitiendo que aplicaciones reaccionen a un gesto o una seña hecha por el usuario.
+Kinect empezó como una propuesta de Microsoft en Junio del 2009, al principio fue conocido con el nombre de ''Project Natal'' y lanzado en noviembre del año siguiente ya con el nombre con el que se le conoce actualmente. El dispositivo provee una Natural User Interface (NUI) que hace posible la interacción intuitiva sin ningún dispositivo intermedio, como había sido antes el control remoto. 
+El dispositivo Kinect hace posible que una computadora cobre sentido sobre el entorno que la rodea, lo logra usando una cámara, un micrófono direccional y un sensor de profundidad. Este dispositivo mejora el modo de interacción humano - maquina, permitiendo que aplicaciones reaccionen a un gesto o una seña hecha por el usuario.
 
 \subsection{Capacidades técnicas.}
 Sensor.
@@ -50,12 +50,14 @@ Sistema de audio.
 \end{itemize}
 
 \section{Descripción de las API's.}
+En esta sección se dará una breve explicación sobre las diferentes API's que pueden ser usadas para programar aplicaciones que usen los recursos proporcionados por Kinect. \newline
+Una API es un grupo de rutinas (conformando una interfaz) que provee un sistema operativo, una aplicación o una biblioteca, que definen cómo invocar desde  un programa un servicio que éstos prestan. En otras palabras, una API representa un interfaz de comunicación entre componentes software. Una compañía de software libera su API a disposición del público para que otros desarrolladores de software pueden diseñar productos que funcionan con su servicio. Un API a menudo forma parte de SDK (Kit de desarrollo de software)\footnote{•http://www.alegsa.com.ar/Dic/api.php}.
 
 \subsection{OpenNi}
-Es un framework multi-language, cross-platform que define un API para desarrollo de aplicaciones,esta compuesta por un grupo de interfaces que permiten el acceso a los sensores de audio y visión, OpenNi esta bajo la licencia libre, el responsable de OpenNi es PrimeSense una empresa Israelí que desarrollo la tecnología en el kinect.
+Es un framework multi-lenguage, cross-platform que define un API para desarrollo de aplicaciones, esta compuesta por un grupo de interfaces que permiten el acceso a los sensores de audio y visión, OpenNi es un software Open Source, su responsable es PrimeSense, una empresa israelí que desarrolló la tecnología del Kinect.
 
-\subsubsection{Middleware (NITE).}
-Para el procesamiento de la datos del utiliza Middleware llamado NITE este no esta bajo licencia libre y provee las siguientes características:
+\subsubsection{NITE.}
+NITE es un middleware (software de computadora  que conecta componentes de software o aplicaciones para que puedan intercambiar datos entre éstas) para el procesamiento de los datos de Kinect que provee las siguientes características:
 \begin{itemize}
 \item Análisis de cuerpo completo.
 \item Análisis de mano
@@ -64,16 +66,16 @@ Para el procesamiento de la datos del utiliza Middleware llamado NITE este no es
 \end{itemize} 
 
 \subsection{Open Kinect}
-También conocida como free kinect es un librería bajo licencia libre cuya función es acceder a Microsoft Kinect USB camera, se comenzó desarrollarla en noviembre del 2011; esta librería, fue creada por OpenKinect que es una comunidad de programadores que según su pagina \footnote{•http://www.openkinect.org} consta con mas de 2000 miembros. Esta libreria actualmente tiene soporte para:
+También conocida como Free Kinect es un librería Open Source cuya función es acceder a la cámara usb Kinect, se comenzó a desarrollar en noviembre del 2011; esta librería, fue creada por una comunidad de programadores llamada Open Kinect \footnote{•http://www.openkinect.org}, actualmente tiene soporte para:
 \begin{itemize}
 \item RGB y sensor de profundidad.
 \item Motores.
-\item Acelerometro.
+\item Acelerómetro.
 \item Led.
 \item Se esta trabajando de en el acceso a audio.
 \end{itemize}
 \subsubsection{Libfreenect.}
-Esta librería de bajo nivel incluye todo el código necesario para activar, inicializar y establecer la comunicación de datos con el hardware kinect, incluye una API cross-platform que funciona con Windows, Linux  y OS X. El API tiene adaptaciones y exenciones para estos lenguajes:
+Librería de bajo nivel que incluye todo el código necesario para activar, inicializar y establecer la comunicación de datos con el hardware kinect, incluye una API cross-platform que funciona con Windows, Linux  y OS X. El API tiene adaptaciones y extensiones para los siguientes lenguajes:
 \begin{itemize}
 \item C.
 \item C++.
@@ -83,25 +85,8 @@ Esta librería de bajo nivel incluye todo el código necesario para activar, ini
 \item C Synchronous Interface.
 \end{itemize} 
 
-\subsubsection{OpenKinect Analysis Library.}
-Esta bibliotecas se comunica con el API de OpenKinect y analiza la información en bruto en abstracciones más útiles.
-\begin{itemize}
-\item Hand tracking
-\item Skeleton tracking
-\item Depth processing
-\item 3D audio isolation coning?
-\item Audio cancellation (perhaps a driver feature?)
-\item Point cloud generation
-\item Inertial movement tracking with the built in accelerometer or an attached WiiMote
-\item 3d reconstruction
-\item GPU acceleration for any of the above 
-\end{itemize}
-Sin embargo esta biblioteca no esta disponible aun. Ademas de estas bi-bliotecas el proyecto ofrece \textbf{OpenKinect Apps} que es  código ejemplo, y aplicaciones 
-
-\subsection{Free Kinect}
-
 \subsection{Kinect SDK}
-Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C-Sharp o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial están incluidos ejemplos de códigos en los tres lenguajes mencionados.
+Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C\# o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial están incluidos ejemplos de códigos en los tres lenguajes mencionados.
 
 \subsubsection{Tabla comparativa de versiones.}
 \begin{tabular}{||c||c||c||c||c||}
@@ -135,9 +120,9 @@ Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paq
 \end{tabular} 
 
 \subsubsection{XNA.}
-XNA es un conjunto de tecnologías para video juegos de Microsoft, entre las cuales estan incluidas las siguientes: 
+XNA es un conjunto de tecnologías para vídeo juegos de Microsoft, incluye los siguientes complementos: 
 \begin{itemize}
-\item DiectX. Se trata de una librería de C++ para programar gráficos.
+\item DirectX. Se trata de una librería de C++ para programar gráficos.
 \item XNA Game Studio. Son complementos de Visual Studio para la canalización del contenido y el despliegue de funciones usadas con el framework. Esta es la herramienta usada al hacer un juego para Xbox y enviar los datos a este.
 \item Framework de XNA. Es el conjunto de bibliotecas .NET construidas.
 \end{itemize}
@@ -146,251 +131,16 @@ XNA es un conjunto de tecnologías para video juegos de Microsoft, entre las cua
 Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramientas de desarrollo de Microsoft de gramática para ayudar a validar, depurar, probar y optimizar las gramáticas de las aplicaciones de voz. Entre sus herramientas se encuentran las siguientes:
 \begin{itemize}
 \item \textbf{CheckPhrase.exe.} Esta nueva herramienta tiene una frase y una gramática como entradas y salidas. Check Phrase emite frases personalizadas asociadas con la frase que se encuentra.
-\item \textbf{Confusability.exe.} Esta nueva herramienta identifica frases en una gramática que son fonéticamente similares. La herramienta puede ayudar a detectar las frases que a la larga pueden causar a los usuarios tener una mala experiencia, de tal manera que una frase en la gramática es falsamente reconocido por otra frase que también está en la gramática. La herramienta Confusability acepta varios archivos de gramática como de entrada y realiza su análisis en el conjunto de archivos de entrada especificados.
+\item \textbf{Confusability.exe.} Esta nueva herramienta identifica frases en una gramática que son fonéticamente similares. La herramienta puede ayudar a detectar las frases que a la larga pueden causar a los usuarios tener una mala experiencia, de tal manera que una frase en la gramática es falsamente reconocida como otra frase que también incluida en la gramática. La herramienta Confusability acepta varios archivos de gramática como de entrada y realiza su análisis en el conjunto de archivos de entrada especificados.
 \item \textbf{GrammarValidator.exe} Valida la sintaxis del elemento gramatical. Emite una serie de advertencias al validar una gramática, que incluye la detección de la repetición y las reglas inalcanzables.
-\item \textbf{PhraseGenerator.exe}Genera un subconjunto de frases sobre la base de los pesos en la gramática, y si lo desea, puede optar por no ampliar las referencias específicas de la regla.
-\item \textbf{Simulator.exe} Usted puede elegir si desea o no volver a utilizar el estado del motor en la estructura de la EMMA (Extensible MultiModal Annotation) de entrada, en lugar de una opción en la línea de comandos. Es decir, el estado motor de reconocimiento es ahora automáticamente reutilizado sólo cuando las expresiones están contenidas dentro de un emma en un bloque de secuencia. Además, el /ReuseEngineState de línea de comandos se ha eliminado.
-\item \textbf{SimulatorResultsAnalyzer.exe} Proporciona información adicional para el ajuste de sus gramáticas, incluyendo detección de frases "out of grammar" y nuevos tipos de categorías de errores para darle un mejor análisis y métricas para el reconocimiento simulado. Añade nuevos elementos XML (AudioType, RecoResultSemantics y TranscriptSemantics) a la salida para hacer más fácil analizar los resultados sin necesidad de referirse de nuevo al archivo de salida del simulador.
+\item \textbf{PhraseGenerator.exe} Genera un subconjunto de frases sobre la base de los pesos en la gramática, y si lo desea, puede optar por no ampliar las referencias específicas de la regla.
+\item \textbf{Simulator.exe} Se puede elegir si se desea o no volver a utilizar el estado del motor en la estructura de la EMMA (Extensible MultiModal Annotation) de entrada, en lugar de una opción en la línea de comandos. Es decir, el estado motor de reconocimiento es ahora automáticamente reutilizado sólo cuando las expresiones están contenidas dentro de un EMMA en un bloque de secuencia. 
+\item \textbf{SimulatorResultsAnalyzer.exe} Proporciona información adicional para el ajuste de sus gramáticas, incluyendo detección de frases que no se encuentran en la gramática ya definida conocidas como fuera de gramática, "out of grammar", y nuevos tipos de categorías de errores para darle un mejor análisis y métricas para el reconocimiento simulado. Añade nuevos elementos XML (AudioType, RecoResultSemantics y TranscriptSemantics) a la salida para hacer más fácil analizar los resultados sin necesidad de referirse de nuevo al archivo de salida del simulador.
 \end{itemize} 
 
 \subsubsection{Kinect Speech Language Pack.}
 Los paquetes de lenguaje de Kinect para Windows son complementos para el Kinect en tiempo de ejecución que usan el reconocimiento de voz para habilitar la forma en que cierto idioma se habla en diferentes lugares.
 
-\subsubsection{Librería Kinect}
-\begin{itemize}
-\item KinectSensor
-	\begin{itemize}
-	%~	Métodos
-	\item KinectSensors
-	\item Start
-	\item Stop
-	\item ColorStream
-	\item ColorFrameReady
-	\item SkeletonStream
-	\item InstanceIndex
-	\item DeviceConnectionId
-	\item NuiCamera
-	\item MaxElevationAngle
-	\item MinElevationAngle
-	\item ElevationAngle
-	%~	Atributos
-	\item Dispose
-	\item AllFramesReady: boolean	
-	\item UniqueKinectId: boolean	
-	\item MapDepthFrameToColorFrame: boolean
-	\item MapDepthToColorImagePoint: boolean
-	\item MapDepthToSkeletonPoint: boolean
-	\item MapSkeletonPointToDepth: boolean
-	\item MapSkeletonPointToColor: boolean	
-	\end{itemize}
-\item RuntimeOptions
-	\begin{itemize}
-	%%~	Métodos
-	\item UseDepthAndPlayerIndex
-	\item UseSkeletalTracking
-	\item UseColor
-	\item HasFlag
-	\end{itemize}
-\item KinectDeviceCollection	
-	\begin{itemize}
-	%~	Métodos
-	\item NotifyUserKinectsStatusChanged	
-	%~	Atributos
-	\item Dispose: boolean	
-	\end{itemize}
-\item StatusChangedEventArgs
-	\begin{itemize}
-	%~	Métodos
-	\item Sensor
-	%~	Atributos
-	\end{itemize}
-\item DepthImageFrame
-	\begin{itemize}
-	%~	Métodos
-	\item MapToColorPixel
-	\end{itemize}
-\item KinectStatus
-	\begin{itemize}
-	%~	Atributos
-	\item Undefined: boolean
-	\item Initializing: boolean
-	\item DeviceNotGenuine: boolean
-	\item DeviceNotSupported: boolean
-	\item InsufficientBandwidth: boolean
-	\end{itemize}
-\item ColorImageStream
-	\begin{itemize}
-	%~	Métodos
-	\item OpenNextFrame
-	\item Enable
-	%~	Atributos
-	\item Disable: boolean
-	\item StreamType: boolean
-	\item Resolution: boolean
-	\item Type: boolean
-	\item CreateCompatibleImageFrame: boolean	
-	\item FrameHeight: int
-	\item FrameWidth: int
-	\end{itemize}
-\item ImageFrameReadyEventArgs
-	%\begin{itemize}
-	%~	Métodos
-	%~	Atributos
-	%\end{itemize}	
-\item ColorImageFrameReadyEventArgs
-	\begin{itemize}
-	%~	Métodos
-	\item OpenColorImageFrame 	
-	%~	Atributos
-	\end{itemize}		
-\item ColorImageFrame
-	\begin{itemize}
-	%~	Métodos
-	\item CopyPixelDataTo
-	%~	Atributos
-	\item Type: boolean
-	\item Resolution: boolean
-	\item Image: boolean
-	\item ViewArea: boolean
-	\item ImageFrame: boolean
-	\item Sourcestream: boolean 
-	\item Dispose: boolean
-	\item BytesPerPixel: int
-	\item Height: int
-	\item Width: int
-	\item PixelData: int
-	\end{itemize}	
-\item DepthImageStream
-	\begin{itemize}
-	%~	Métodos
-	\item OpenNextFrame
-	\item Enable
-	\item StreamType
-	\item Resolution	
-	\item Type
-	\item CreateCompatibleImageFrame
-	%~	Atributos
-	\item IsTooFarRangeEnabled: boolean
-	\item Disable: boolean
-	\item FrameHeight: int
-	\item FrameWidth: int
-	\end{itemize}
-\item DepthImageFrameReadyEventArgs
-	\begin{itemize}
-	%~	Métodos
-	\item OpenDepthImageFrame
-	%~	Atributos
-	\end{itemize}
-\item DepthImageFrame
-	\begin{itemize}
-	%~	Métodos
-	\item MapToColorImage
-	\item MapFromSkeletonPoint
-	\item MapToSkeletonPoint
-	\item PlanarImage
-	\item ImageDigitalZoom
-	\item ImageStreamType
-	\item ImageType
-	\item ImageResolution
-	\item ImageViewArea
-	\item DepthImageToSkeleton
-	\item SkeletontoDepthImageFrame
-	%~	Atributos
-	\item PlayerIndexBitmask: boolean
-	\item PlayerIndexBitmaskWidth: boolean
-	\item DepthImageFormat: boolean
-	\item DepthRange: boolean
-	\item DepthImageFormat: boolean
-	\item DepthImagePoint: boolean
-	\item DepthImagePointFloat: boolean
-	\end{itemize}	 
-\item SkeletonStream
-	\begin{itemize}
-	%~	Métodos
-	\item OpenNextFrame
-	%~	Atributos
-	\item Disable: boolean
-	\item Enable: boolean
-	\item ChooseSkeletons: boolean
-	\end{itemize} 
-\item SkeletonFrameReadyEventArgs
-	\begin{itemize}
-	%~	Métodos
-	\item OpenSkeletonFrame
-	%~	Atributos
-	\end{itemize}	
-\item SkeletonFrame
-	\begin{itemize}
-	%~	Métodos
-	\item Timestamp
-	\item CopySkeletonDataTo
-	\item Quality
-	%~	Atributos
-	\item Dispose: boolean
-	\end{itemize}	
-\item Skeleton
-	\begin{itemize}
-	%~	Métodos
-	\item TrackingId
-	\item Parent
-	\item JointCollection
-	\item SkeletonPoint
-	%~	Atributos
-	\item Count: boolean
-	\item JointType: boolean
-	\item Joint: int
-	\item Position: int
-	\end{itemize}	
-\item FrameEdges
-	\begin{itemize}
-	%~	Métodos
-	 \item SkeletonFrameQuality
-	%~	Atributos
-	\item None: boolean
-	\item Left: int
-	\item Top: int
-	\item Right: int
-	\item Botom: int
-	\end{itemize}
-\item KinectAudioSource
-	\begin{itemize}
-	%~	Métodos	
-	\item FindCaptureDevices
-	\item RetrieveTsStats
-	\item QualityMetrics
-	\item DevicePairGuid
-	\item KinectAudioSource
-	\item AutomaticGainControlEnabled
-	\item SoundsSourceAngle
-	\item SoundSourceAngleConfidence
-	\item BeamAngleMode
-	\item ManualBeamAngle
-	\item BeamAngleChanged
-	\item EchoCancellationSpeakerIndex
-	\item AcousticEchoSuppression
-	\item CenterClip
-	\item EchoLength
-	\item FeatureMode
-	\item FrameSize
-	\item GainBounder
-	\item MicArrayPreprocess
-	\item MicropheneIndex
-	\item NoiseFill
-	\item SourceMode
-	\item VoiceActivityDetector
-	\item EchoCancellationMode
-	\item Dispose
-	\item MicArrayMode
-	\item SystemMode
-	\item BeamAngleChangedEventArgs
-	\item SoundSourceAngleChangedEventArgs: boolean
-	\item EchoCancellationMode: boolean
-	\item BeamAngleMode: boolean
-	%%~	Atributos		
-	\end{itemize}
-\end{itemize}
-
-\newpage
 \subsection{Comparativa entre APIS.}
 En la siguiente tabla se muestra una comparación entre las APIS.
 
@@ -400,8 +150,25 @@ En la siguiente tabla se muestra una comparación entre las APIS.
 \hline Multi lenguaje & • & • & • \\ 
 \hline Acceso alto nivel & • &  & • \\ 
 \hline Licencia & GPL y propietario & GPL & Propietario \\ 
-\hline Comentarios & Tiene acceso a alto nivel pero en modo Middleware (NITE) & No soporta skeleton tracking. & Solo funciona con Windows 7 o superior. \\ 
+\hline Comentarios & Tiene acceso a alto nivel pero en modo NITE & No soporta skeleton tracking. & Solo funciona con Windows 7 o superior. \\ 
 \hline 
 \end{tabular} 
+
+\section{Bibliografía}
+http://gekkotaku.com/2010/07/kinect-especificaciones-tecnicas/
+\newline
+http://kotaku.com/5576002/here-are-kinects-technical-specs
+\newline 
+http://www.matuk.com/2011/11/09/el-kinect-no-sabe-lo-que-le-espera/
+\newline
+http://www.fayerwayer.com/2011/04/mix11-microsoft-adelanta-caracteristicas-del-sdk-beta-de-kinect-para-windows/
+\newline
+http://intellekt.ws/blogs/david/?tag=sdk
+\newline
+http://mstechsmart.wordpress.com/2012/02/01/
+\newline
+www.microsoft.com/en-us/kinectforwindows/
+\newline
+www.channel9.msdn.com/coding4fun/kinect
 
 \end{document}
