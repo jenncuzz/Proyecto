@@ -4,25 +4,17 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-
-%
 %para el glosario
 \makeatletter
 \usepackage{url}
 \def\url@leostyle{\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
 \makeatother
-%% Now actually use the newly defined style.
 \urlstyle{leo}
-
-%\usepackage{url}
 \usepackage[colorlinks]{hyperref}
 \usepackage[acronym,toc]{glossaries}
 \newglossary[slg]{symbols}{sym}{sbl}{List of Symbols}
 \makeglossaries
 \include{glosario}
-%
-
-%
 %
 \author{Jennifer Cruz Muñoz \and José Daniel Ku Ek \and Israel Navarrete Alvarado}
 \title{Documentación Kinect}
@@ -31,12 +23,14 @@
 \newpage
 \tableofcontents
 \newpage
+\listoftables
+\newpage
 \section{Descripción del Dispositivo}
 Kinect empezó como una propuesta de Microsoft en Junio del 2009, al principio fue conocido con el nombre de ''Project Natal'' y lanzado en noviembre del año siguiente ya con el nombre con el que se le conoce actualmente. El dispositivo provee una Natural User Interface (NUI) que hace posible la interacción intuitiva sin ningún dispositivo intermedio, como había sido antes el control remoto. 
 El dispositivo Kinect hace posible que una computadora utilice señales visuales y auditivas de su entorno, lo logra usando una cámara, un micrófono direccional y un sensor de profundidad. Este dispositivo mejora el modo de interacción humano - maquina, permitiendo que aplicaciones reaccionen gestos o movimientos corporales realizados por el usuario.
 
 \subsection{Capacidades técnicas\cite{rakuten}.} 
-Barra de sensores:
+Barra de sensores\cite{rakuten}.:
 \begin{itemize} %viñetas
 	\item Lentes sensibles al color y la profundidad.
 	\item Arreglo de micrófonos.
@@ -70,8 +64,8 @@ Sistema de audio.
 \end{itemize}
 
 \section{Descripción de las API's.}
-En esta sección se dará una breve explicación sobre las diferentes \gls{API}'s que pueden ser usadas para programar aplicaciones que usen los recursos proporcionados por Kinect. 
-
+En esta sección se dará una breve explicación sobre las diferentes API's que pueden ser usadas para programar aplicaciones que usen los recursos proporcionados por Kinect. 
+Una API es un grupo de rutinas (conformando una interfaz) que provee un sistema operativo, una aplicación o una biblioteca, que definen cómo invocar desde  un programa un servicio que éstos prestan. En otras palabras, una API representa un interfaz de comunicación entre componentes software. Una compañía de software libera su API a disposición del público para que otros desarrolladores de software pueden diseñar productos que funcionan con su servicio. Un API a menudo forma parte de SDK (Kit de desarrollo de software)\cite{Diccionario}.
 
 \subsection{OpenNi}
 Es un \gls{framework}, que funciona con varios lenguajes de programación , \gls{multiplataforma} que define un API para desarrollo de aplicaciones, está compuesta por un grupo de interfaces que permiten el acceso a los sensores de audio y visión, OpenNi es un software Open Source desarrollado por PrimeSense, empresa israelí que desarrolló la tecnología del Kinect.
@@ -97,7 +91,7 @@ Librería de bajo nivel que incluye todo el código necesario para activar, inic
 C, C++, .NET (C\#/VB.NET), Java ( JNA and JNI), Python, C Synchronous Interface,
 
 \subsection{Kinect SDK}
-Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C\# o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial se incluyen ejemplos de códigos en los tres lenguajes mencionados.
+Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los \gls{driver}s para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C\# o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial se incluyen ejemplos de códigos en los tres lenguajes mencionados.
 %MENCIONAR LAS TECNOLOGIAS QUE SE USAN EN KINECT SDK
 \subsubsection{Tabla comparativa de versiones.}
 La siguiente \ref{tabla_comparativa} tabla fue hecha con base en la información de cada versión del SDK de Microsoft.
@@ -139,9 +133,9 @@ La siguiente \ref{tabla_comparativa} tabla fue hecha con base en la información
 \subsubsection{XNA.}
 XNA es un conjunto de tecnologías para vídeo juegos de Microsoft, incluye los siguientes complementos: 
 \begin{itemize}
-\item DirectX. Se trata de una librería de C++ para programar gráficos.
-\item XNA Game Studio. Son complementos de Visual Studio para la canalización del contenido y el despliegue de funciones usadas con el framework. Esta es la herramienta usada al hacer un juego para Xbox y enviar los datos a este.
-\item Framework de XNA. Es el conjunto de bibliotecas .NET construidas.
+	\item DirectX. Se trata de una librería de C++ para programar gráficos.
+	\item XNA Game Studio. Son complementos de Visual Studio para la canalización del contenido y el despliegue de funciones usadas con el framework. Esta es la herramienta usada al hacer un juego para Xbox y enviar los datos a este.
+	\item Framework de XNA. Es el conjunto de bibliotecas .NET construidas.
 \end{itemize}
 
 \subsubsection{Microsoft Speech Platform Runtime.}
@@ -149,12 +143,12 @@ XNA es un conjunto de tecnologías para vídeo juegos de Microsoft, incluye los 
 Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramientas de desarrollo de Microsoft para manejo de gramática, que permite entre otras cosas validar, depurar, probar y optimizar el uso de elementos gramaticales de las aplicaciones de voz. Algunas de las características descritas anteriormente se implementan en las siguientes herramientas \nocite{Microsoft_sdn}.
 %DEFINICIÓN DE LA GRAMATICA QUE MANEJA
 \begin{itemize}
-\item \textbf{CheckPhrase.exe.} Se determina si una gramática usa una frase dada y regresa información sobre la frase recibida. %INVESTIGAR SU USO
-\item \textbf{Confusability.exe.} Esta nueva herramienta identifica frases en una gramática que son fonéticamente similares. La herramienta puede ayudar a detectar las frases que a la larga pueden causar a los usuarios tener una mala experiencia, de tal manera que una frase en la gramática es falsamente reconocida como otra frase que esta también incluida en la gramática. La herramienta Confusability acepta varios archivos de gramática como entrada donde realiza su análisis en el conjunto de archivos de entrada especificados.
-\item \textbf{GrammarValidator.exe} Valida la sintaxis del elemento gramatical. Emite una serie de advertencias al validar una gramática, que incluye la detección de la repetición y las reglas inalcanzables.
-\item \textbf{PhraseGenerator.exe} Genera un subconjunto de frases apoyados en las ponderaciones de una gramática, y si lo desea, puede optar por no ampliar las referencias específicas de la regla.
-\item \textbf{Simulator.exe} Se puede elegir si se desea o no volver a utilizar el estado del motor en la estructura de la EMMA (Extensible MultiModal Annotation) de entrada, en lugar de una opción en la línea de comandos. Es decir, el estado motor de reconocimiento es ahora automáticamente reutilizado sólo cuando las expresiones están contenidas dentro de un EMMA en un bloque de secuencia.  %EXPLICA EMMA
-\item \textbf{SimulatorResultsAnalyzer.exe} Proporciona información adicional para el ajuste de sus gramáticas, incluyendo detección de frases que no se encuentran en la gramática ya definida, conocidas como fuera de gramática, y nuevos tipos de categorías de errores para darle un mejor análisis y métricas para el reconocimiento simulado. Añade nuevos elementos XML (AudioType, RecoResultSemantics y TranscriptSemantics) a la salida para hacer más fácil analizar los resultados sin necesidad de referirse de nuevo al archivo de salida del simulador.
+	\item \textbf{CheckPhrase.exe.} Se determina si una gramática usa una frase dada y regresa información sobre la frase recibida. %INVESTIGAR SU USO
+	\item \textbf{Confusability.exe.} Esta nueva herramienta identifica frases en una gramática que son fonéticamente similares. La herramienta puede ayudar a detectar las frases que a la larga pueden causar a los usuarios tener una mala experiencia, de tal manera que una frase en la gramática es falsamente reconocida como otra frase que esta también incluida en la gramática. La herramienta Confusability acepta varios archivos de gramática como entrada donde realiza su análisis en el conjunto de archivos de entrada especificados.
+	\item \textbf{GrammarValidator.exe} Valida la sintaxis del elemento gramatical. Emite una serie de advertencias al validar una gramática, que incluye la detección de la 			repetición y las reglas inalcanzables.
+	\item \textbf{PhraseGenerator.exe} Genera un subconjunto de frases apoyados en las ponderaciones de una gramática, y si lo desea, puede optar por no ampliar las referencias específicas de la regla.
+	\item \textbf{Simulator.exe} Se puede elegir si se desea o no volver a utilizar el estado del motor en la estructura de la \gls{EMMA} (Extensible MultiModal Annotation) de entrada, en lugar de una opción en la línea de comandos. Es decir, el estado motor de reconocimiento es ahora automáticamente reutilizado sólo cuando las expresiones están contenidas dentro de un EMMA en un bloque de secuencia.  %EXPLICA EMMA
+	\item \textbf{SimulatorResultsAnalyzer.exe} Proporciona información adicional para el ajuste de sus gramáticas, incluyendo detección de frases que no se encuentran en la gramática ya definida, conocidas como fuera de gramática, y nuevos tipos de categorías de errores para darle un mejor análisis y métricas para el reconocimiento simulado. Añade nuevos elementos XML (AudioType, RecoResultSemantics y TranscriptSemantics) a la salida para hacer más fácil analizar los resultados sin necesidad de referirse de nuevo al archivo de salida del simulador.
 \end{itemize} 
 
 \subsubsection{Kinect Speech Language Pack.}
