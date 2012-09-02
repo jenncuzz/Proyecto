@@ -4,6 +4,26 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+
+%
+%para el glosario
+\makeatletter
+\usepackage{url}
+\def\url@leostyle{\@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{leo}
+
+%\usepackage{url}
+\usepackage[colorlinks]{hyperref}
+\usepackage[acronym,toc]{glossaries}
+\newglossary[slg]{symbols}{sym}{sbl}{List of Symbols}
+\makeglossaries
+\include{glosario}
+%
+
+%
+%
 \author{Jennifer Cruz Muñoz \and José Daniel Ku Ek \and Israel Navarrete Alvarado}
 \title{Documentación Kinect}
 \begin{document}
@@ -15,113 +35,107 @@
 Kinect empezó como una propuesta de Microsoft en Junio del 2009, al principio fue conocido con el nombre de ''Project Natal'' y lanzado en noviembre del año siguiente ya con el nombre con el que se le conoce actualmente. El dispositivo provee una Natural User Interface (NUI) que hace posible la interacción intuitiva sin ningún dispositivo intermedio, como había sido antes el control remoto. 
 El dispositivo Kinect hace posible que una computadora utilice señales visuales y auditivas de su entorno, lo logra usando una cámara, un micrófono direccional y un sensor de profundidad. Este dispositivo mejora el modo de interacción humano - maquina, permitiendo que aplicaciones reaccionen gestos o movimientos corporales realizados por el usuario.
 
-\subsection{Capacidades técnicas.} %Referencia bibliografica http://www.play.com/Games/Xbox360/4-/10296372/Kinect/Product.html
+\subsection{Capacidades técnicas\cite{rakuten}.} 
 Barra de sensores:
 \begin{itemize} %viñetas
-\item Lentes sensibles al color y la profundidad.
-\item Arreglo de micrófonos.
-\item Motor para ajustar la inclinación del sensor.
-\item Compatible con Windows y consolas Xbox existentes.
+	\item Lentes sensibles al color y la profundidad.
+	\item Arreglo de micrófonos.
+	\item Motor para ajustar la inclinación del sensor.
+	\item Compatible con Windows y consolas Xbox existentes.
 \end{itemize}
 Campo de visión.
 \begin{itemize} 
-\item Campo de visión horizontal: 57 grados.
-\item Campo de visión vertical: 43 grados.
-\item Rango de inclinación física: +/- 27 grados.
-\item Rango de sensor de profundidad:  1.2 a 3.5 metros.
+	\item Campo de visión horizontal: 57 grados.
+	\item Campo de visión vertical: 43 grados.
+	\item Rango de inclinación física: +/- 27 grados.
+	\item Rango de sensor de profundidad:  1.2 a 3.5 metros.
 \end{itemize}
 Flujo de datos. 
 \begin{itemize} 
-\item 320x240  profundidad de 16 bits, 30 cuadros por segundo.
-\item 640x480 color de 32 bits, 30 cuadros por segundo.
-\item 16 bits de audio, 16 KHz.
+	\item 320x240  profundidad de 16 bits, 30 cuadros por segundo.
+	\item 640x480 color de 32 bits, 30 cuadros por segundo.
+	\item 16 bits de audio, 16 KHz.
 \end{itemize}
 Sistema de rastreo del esqueleto.
 \begin{itemize} 
-\item Rastrea hasta 6 personas, con solo 2 jugadores activos.
-\item Rastrea hasta 20 articulaciones por jugador activo.
-\item Posee la habilidad de reconocer jugadores activos con sus avatares de LIVE.
+	\item Rastrea hasta 6 personas, con solo 2 jugadores activos.
+	\item Rastrea hasta 20 articulaciones por jugador activo.
+	\item Posee la habilidad de reconocer jugadores activos con sus avatares de LIVE.
 \end{itemize}
 Sistema de audio.
 \begin{itemize} 
-\item Reconocimiento de voz.
-\item Sistema de cancelación de audio que mejora la recepción de voz.
-\item Party chat y chat de voz.
+	\item Reconocimiento de voz.
+	\item Sistema de cancelación de audio que mejora la recepción de voz.
+	\item Party chat y chat de voz.
 \end{itemize}
 
 \section{Descripción de las API's.}
-En esta sección se dará una breve explicación sobre las diferentes API's que pueden ser usadas para programar aplicaciones que usen los recursos proporcionados por Kinect. \newline
-Una API es un grupo de rutinas (conformando una interfaz) que provee un sistema operativo, una aplicación o una biblioteca, que definen cómo invocar desde  un programa un servicio que éstos prestan. En otras palabras, una API representa un interfaz de comunicación entre componentes software. Una compañía de software libera su API a disposición del público para que otros desarrolladores de software pueden diseñar productos que funcionan con su servicio. Un API a menudo forma parte de SDK (Kit de desarrollo de software)\footnote{•http://www.alegsa.com.ar/Dic/api.php}.%PONER COMO BIBLIOGRAFÍA LAS REFERENCIAS
+En esta sección se dará una breve explicación sobre las diferentes \gls{API}'s que pueden ser usadas para programar aplicaciones que usen los recursos proporcionados por Kinect. 
+
 
 \subsection{OpenNi}
-%GLOSARIO DE FRAMEWORK, CROSS PLATFORM, MIDDLEWARE, DRIVERS
-Es un framework multi-language, cross-platform que define un API para desarrollo de aplicaciones, está compuesta por un grupo de interfaces que permiten el acceso a los sensores de audio y visión, OpenNi es un software Open Source desarrollado por PrimeSense, empresa israelí que desarrolló la tecnología del Kinect.
+Es un \gls{framework}, que funciona con varios lenguajes de programación , \gls{multiplataforma} que define un API para desarrollo de aplicaciones, está compuesta por un grupo de interfaces que permiten el acceso a los sensores de audio y visión, OpenNi es un software Open Source desarrollado por PrimeSense, empresa israelí que desarrolló la tecnología del Kinect.
 
 \subsubsection{NITE.}
-NITE es un middleware (software de computadora  que conecta componentes de software o aplicaciones para que puedan intercambiar datos entre estas) para el procesamiento de los datos de Kinect que provee las siguientes características:
+NITE es un \gls{middleware} para el procesamiento de los datos de Kinect que provee las siguientes características:
 \begin{itemize}
-\item Análisis de cuerpo completo.
-\item Análisis de mano
-\item Detección de gestos 
-\item Análisis de escena 
+	\item Análisis de cuerpo completo.
+	\item Análisis de mano
+	\item Detección de gestos 
+	\item Análisis de escena 
 \end{itemize} 
 
 \subsection{Open Kinect}
-También conocida como Free Kinect es un librería Open Source cuya función es acceder a la cámara usb Kinect, se comenzó a desarrollar en noviembre del 2011; esta librería, fue creada por una comunidad de programadores llamada Open Kinect \footnote{•http://www.openkinect.org}, actualmente ofrece soporte para:
-\begin{itemize}
-\item Cámara RGB y sensor de profundidad.
-\item Motores de posicionamiento.
-\item Acelerómetro.\footnote{• Utiliza el acelerómetro para obtener los grados de inclinación del dispositivo.}
-\item Led.
-\end{itemize}
+También conocida como Free Kinect es un librería Open Source cuya función es acceder a la cámara usb Kinect, se comenzó a desarrollar en noviembre del 2011; esta librería, fue creada por una comunidad de programadores llamada Open Kinect \cite{openkinect}, actualmente ofrece soporte para:
+cámara RGB y sensor de profundidad,
+motores de posicionamiento,
+acelerómetro,\footnote{• Utiliza el acelerómetro para obtener los grados de inclinación del dispositivo.}
+led (indicador de estado).
+
 \subsubsection{Libfreenect.}
-Librería de bajo nivel que incluye todo el código necesario para activar, inicializar y establecer la comunicación de datos con el hardware kinect, incluye una API cross-platform que funciona con Windows, Linux  y OS X. El API tiene adaptaciones y extensiones para los siguientes lenguajes:
-\begin{itemize}
-\item C.
-\item C++.
-\item .NET (C\#/VB.NET).
-\item Java ( JNA and JNI).
-\item Python.
-\item C Synchronous Interface.
-\end{itemize} 
+Librería de bajo nivel que incluye todo el código necesario para activar, inicializar y establecer la comunicación de datos con el hardware kinect, incluye una API  multiplataforma que funciona con Windows, Linux  y OS X. El API tiene adaptaciones y extensiones para los siguientes lenguajes de programación: 
+C, C++, .NET (C\#/VB.NET), Java ( JNA and JNI), Python, C Synchronous Interface,
 
 \subsection{Kinect SDK}
 Fue lanzado por Microsoft en Junio del 2011 para ser usado con Windows 7, el paquete de desarrollo SDK ofrece la posibilidad de explotar las capacidades del sensor Kinect dentro del entorno de trabajo de Windows. Incluye los drivers para el funcionamiento del dispositivo Kinect, estos pueden usarse para la programación de aplicaciones con C++, C\# o Visual Basic, usando Microsoft Visual Studio 2010. Al descargar el SDK de la pagina oficial se incluyen ejemplos de códigos en los tres lenguajes mencionados.
 %MENCIONAR LAS TECNOLOGIAS QUE SE USAN EN KINECT SDK
 \subsubsection{Tabla comparativa de versiones.}
-La siguiente tabla fue hecha con base en la información de cada versión del SDK de Microsoft.
+La siguiente \ref{tabla_comparativa} tabla fue hecha con base en la información de cada versión del SDK de Microsoft.
 \newline
-\newline%AGREGAR NUMERACIÓN DE TABLAS, NO MANEJARLA COMO SECCIÓN
-\begin{tabular}{||c||c||c||c||c||}
-\hline Característica                           & Beta 1 & Beta 2 & Versión 1 & Versión 1.5 \\ 
-\hline Robust Skeletal Tracking                 & •      & •      & •         & •           \\ 
-\hline API de Reconocimiento de voz             & •      & •      & •         & •           \\ 
-\hline Cancelación de eco                       & •      & •      & •         & •           \\ 
-\hline Camara XYZ (depth)                       & •      & •      & •         & •           \\ 
-\hline Windows 7                                & •      & •      & •         & •           \\ 
-\hline Windows 8                                &        & •      & •         & •           \\ 
-\hline Cámara a colores                         &        & •      & •         & •           \\ 
-\hline Acceso a datos en bruto del sensor depth &        & •      & •         & •           \\ 
-\hline Acceso a datos en bruto de la cámara     &        & •      & •         & •           \\ 
-\hline Acceso a datos en bruto del micrófono    &        & •      & •         & •           \\ 
-\hline Multithreading al usar Skeletal Tracking &        & •      & •         & •           \\ 
-\hline Detección y gestión del estado de Kinect &        & •      & •         & •           \\ 
-\hline Construcción de apps de 64 bits          &        & •      & •         & •           \\ 
-\hline Supresión de ruido de fondo              &        & •      & •         & •           \\ 
-\hline Near Mode                                &        &        & •         & •           \\
-\hline Soporte de 4 sensores kinect al mismo PC &        &        & •         & •           \\ 
-\hline Control de detección de usuario en S.T.  &        &        & •         & •           \\ 
-\hline Microsoft Speech V.11 incluido           &        &        & •         & •           \\  
-\hline Acustica mejorada con far-talk           &        &        & •         & •           \\  
-\hline Soporte para idioma Español              &        &        &           & •           \\ 
-\hline Kinect Studio                            &        &        &           & •           \\ 
-\hline Human Interface Guidelines (HIG)         &        &        &           & •           \\ 
-\hline Face Tracking SDK                        &        &        &           & •           \\ 
-\hline Seat Skeletal Tracking                   &        &        &           & •           \\ 
-\hline Skeletal Tracking Near Mode              &        &        &           & •           \\ 
-\hline 
-\end{tabular} 
-
+\newline
+\begin{table}[h]
+	\begin{tabular}{||c||c||c||c||c||}
+		\hline Característica                           & Beta 1 & Beta 2 & Versión 1 & Versión 1.5 \\ 
+		\hline Robust Skeletal Tracking                 & •      & •      & •         & •           \\ 
+		\hline API de Reconocimiento de voz             & •      & •      & •         & •           \\ 
+		\hline Cancelación de eco                       & •      & •      & •         & •           \\ 
+		\hline Camara XYZ (depth)                       & •      & •      & •         & •           \\ 
+		\hline Windows 7                                & •      & •      & •         & •           \\ 
+		\hline Windows 8                                &        & •      & •         & •           \\ 
+		\hline Cámara a colores                         &        & •      & •         & •           \\ 
+		\hline Acceso a datos en bruto del sensor depth &        & •      & •         & •           \\ 
+		\hline Acceso a datos en bruto de la cámara     &        & •      & •         & •           \\ 
+		\hline Acceso a datos en bruto del micrófono    &        & •      & •         & •           \\ 
+		\hline Multithreading al usar Skeletal Tracking &        & •      & •         & •           \\ 
+		\hline Detección y gestión del estado de Kinect &        & •      & •         & •           \\ 
+		\hline Construcción de apps de 64 bits          &        & •      & •         & •           \\ 
+		\hline Supresión de ruido de fondo              &        & •      & •         & •           \\ 
+		\hline Near Mode                                &        &        & •         & •           \\
+		\hline Soporte de 4 sensores kinect al mismo PC &        &        & •         & •           \\ 
+		\hline Control de detección de usuario en S.T.  &        &        & •         & •           \\ 
+		\hline Microsoft Speech V.11 incluido           &        &        & •         & •           \\  
+		\hline Acustica mejorada con far-talk           &        &        & •         & •           \\  
+		\hline Soporte para idioma Español              &        &        &           & •           \\ 
+		\hline Kinect Studio                            &        &        &           & •           \\ 
+		\hline Human Interface Guidelines (HIG)         &        &        &           & •           \\ 
+		\hline Face Tracking SDK                        &        &        &           & •           \\ 
+		\hline Seat Skeletal Tracking                   &        &        &           & •           \\ 
+		\hline Skeletal Tracking Near Mode              &        &        &           & •           \\ 
+		\hline 
+	\end{tabular} 
+	\caption{Tabla comparativa de versiones SDK de Microsoft}
+	\label{tabla_comparativa}
+\end{table}
 \subsubsection{XNA.}
 XNA es un conjunto de tecnologías para vídeo juegos de Microsoft, incluye los siguientes complementos: 
 \begin{itemize}
@@ -132,7 +146,7 @@ XNA es un conjunto de tecnologías para vídeo juegos de Microsoft, incluye los 
 
 \subsubsection{Microsoft Speech Platform Runtime.}
 %PONER REFERENCIA http://msdn.microsoft.com/en-us/library/hh362855
-Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramientas de desarrollo de Microsoft para manejo de gramática, que permite entre otras cosas validar, depurar, probar y optimizar el uso de elementos gramaticales de las aplicaciones de voz. Algunas de las características descritas anteriormente se implementan en las siguientes herramientas:
+Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramientas de desarrollo de Microsoft para manejo de gramática, que permite entre otras cosas validar, depurar, probar y optimizar el uso de elementos gramaticales de las aplicaciones de voz. Algunas de las características descritas anteriormente se implementan en las siguientes herramientas \nocite{Microsoft_sdn}.
 %DEFINICIÓN DE LA GRAMATICA QUE MANEJA
 \begin{itemize}
 \item \textbf{CheckPhrase.exe.} Se determina si una gramática usa una frase dada y regresa información sobre la frase recibida. %INVESTIGAR SU USO
@@ -147,37 +161,32 @@ Microsoft Speech Platform SDK v11 ofrece una nueva funcionalidad en las herramie
 Los paquetes de lenguaje de Kinect para Windows son complementos para el Kinect en tiempo de ejecución que usan el reconocimiento de voz para habilitar la forma en que cierto idioma se habla en diferentes países.
 
 \subsection{Comparativa entre APIS.}
-En la siguiente tabla se muestra una comparación entre las APIS.
-%INDICE DE TABLAS
-\begin{tabular}{||p{2.5cm}||p{2.5cm}||p{2.5cm}||p{2.5cm}||}
-\hline API & OpenNI & OpenKinect & Kinect SDK \\ 
-\hline Multi plataforma & • & • &  \\ 
-\hline Multi lenguaje & • & • & • \\ 
-\hline Acceso alto nivel & • &  & • \\ %ACLARAR QUE ES ALTO NIVEL
-\hline Licencia & GPL y propietario & GPL & Propietario \\ 
-\hline Comentarios & Tiene acceso a alto nivel pero en modo NITE & No soporta skeleton tracking. & Solo funciona con Windows 7 o superior. \\ 
-\hline 
-\end{tabular} 
+Como ya se ha mencionado existe mas de una API para para desarrollar aplicaciones que hagan uso del kinect, se elaborado la siguiente tabla \ref{comparativa_apis} para compararlas y facilitar elegir una API
+\begin{table}[h]
+	\begin{tabular}{||p{2.6cm}||p{2.5cm}||p{2.5cm}||p{2.5cm}||}
+		\hline API & OpenNI & OpenKinect & Kinect SDK \\ 
+		\hline Multiplataforma & si & si & no \\ 
+		\hline Multilenguaje & si & si & si \\ 
+		\hline Procesamiento de flujo de datos & si & no & si \\ 
+		\hline Licencia & Open sourse y propietario & Open sourse & Propietario \\ 
+		\hline Comentarios & Usa NITE para procesar los datos del kinect & No soporta skeleton tracking. & Solo funciona con Windows 7 o superior. \\ 
+		\hline 
+	\end{tabular} 
+	\caption{Comparativa de API}
+	\label{comparativa_apis}
+\end{table}
 
-%CONCLUSIÓN
-%INVESTIGAR COMO PASARLO A UN MOTOR DE JUEGOS
+Todas estas API's permiten acceso a bajo nivel, esto es manejo del flujo de datos (audio, video etc) que proporciona kinect pero no todos proporcionan procesamiento del flujo de datos (rastreo de esqueleto, mano o rostro, etc). Se ha elegido Kinect SDK sobre el resto porque esta en continuo desarrollo y proporciona documentación mas amplia que el resto 
 
-\section{Bibliografía}
-%CORREGIR BIBLIOGRAFIA
-http://gekkotaku.com/2010/07/kinect-especificaciones-tecnicas/
-\newline
-http://kotaku.com/5576002/here-are-kinects-technical-specs
-\newline 
-http://www.matuk.com/2011/11/09/el-kinect-no-sabe-lo-que-le-espera/
-\newline
-http://www.fayerwayer.com/2011/04/mix11-microsoft-adelanta-caracteristicas-del-sdk-beta-de-kinect-para-windows/
-\newline
-http://intellekt.ws/blogs/david/?tag=sdk
-\newline
-http://mstechsmart.wordpress.com/2012/02/01/
-\newline
-www.microsoft.com/en-us/kinectforwindows/
-\newline
-www.channel9.msdn.com/coding4fun/kinect
+
+%Muestra el glosario  
+\newpage
+\printglossaries
+%
+%Muesta llas regerencias
+\newpage
+\bibliographystyle{plain}	% (uses file "plain.bst")
+\bibliography{bibliografia.bib}		% expects file "myrefs.bib"
+%
 
 \end{document}

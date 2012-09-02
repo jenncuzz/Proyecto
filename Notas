@@ -1,0 +1,11 @@
+generar glosarrio 
+	latex Documentacion_01a.tex
+	makeglossaries Documentacion_01a.glo 
+	latex Documentacion_01a.tex
+generar bibliografia
+	latex Documentacion_01a.tex
+	bibtex Documentacion_01a.tex
+	latex Documentacion_01a.tex
+	latex Documentacion_01a.tex
+
+
